@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Singup</title>
+</head>
+<body>
+<form action="/auth/signup/" method="POST">
+	{% csrf_token %}
+	username : <input type="text" name="username">
+	email : <input type="email" name="email">
+	password1 : <input type="password" name="password1">
+	password2 : <input type="password" name="password2">
+	<input type="submit" name="submit">
+</form>
+</body>
+</html>
