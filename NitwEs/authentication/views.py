@@ -38,7 +38,7 @@ def signup(request):
 		return redirect("/")
 	return render(request, "authentication/signup .html", response)
 
-def logout(request):
+def signout(request):
 	logout(request)
 	return redirect("/")
 

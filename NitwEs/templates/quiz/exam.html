@@ -1,19 +1,27 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
 	<title>Exam</title>
 </head>
 <body>
-<form method="POST" action="/quiz/evaluate/">
+<form method="POST" action="/quiz/exam/">
 	{% csrf_token %}
 	{% if questions %}
 		{% for question in questions %}
+			
 			<p>{{question.question}}</p>
-			<input type="radio" name="{{question.pk}}" value="op1"><p>{{question.op1}}</p>
-			<input type="radio" name="{{question.pk}}" value="op2"><p>{{question.op2}}</p>
-			<input type="radio" name="{{question.pk}}" value="op3"><p>{{question.op3}}</p>
-			<input type="radio" name="{{question.pk}}" value="op4"><p>{{question.op4}}</p>
-			<b>{{question.answer}}</b>
+			<input type="radio" name="{{question.pk}}" value="op1">{{question.op1}} <br>
+			<input type="radio" name="{{question.pk}}" value="op2">{{question.op2}} <br>
+			<input type="radio" name="{{question.pk}}" value="op3">{{question.op3}} <br>
+			<input type="radio" name="{{question.pk}}" value="op4">{{question.op4}} <br>
+			
+			{% for ans in answer %}
+				{% if ans == question.pk %}
+					{{answer.ans}}
+				{% endif %}
+			{% endfor %}
+			<hr>
 		{% endfor %}
 	{% endif %}
 	<input type="submit" name="submit">
