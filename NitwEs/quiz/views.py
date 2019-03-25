@@ -1,19 +1,25 @@
 from django.shortcuts import render,redirect
-from .models import Question
-
-# Create your views here.
+from .models import Question,ExamTime	
+import datetime
 
 def exam(request):
+	time = ExamTime.objects.all()[0]
+	print(time.time)
+	print(datetime.datetime.now())
 	response = {}
-	response["questions"] = Question.objects.all()
+	questions = Question.objects.all()
+	response["questions"] = questions	
 	if request.method == "POST":
 		score = 0
-		answer = {}
-		questions = Question.objects.all()
+		answer = []
 		for qes in questions:
-			answer[str(qes.pk)] =  request.POST[str(qes.pk)]
+			r = {}
+			r['correct'] = False
+			r['ans'] = request.POST[str(qes.pk)]
 			if qes.answer == request.POST[str(qes.pk)]:
+				r['correct'] = True
 				score+=1
-			response["answer"] = answer
-		print(score)
+			answer.append(r)
+		response["answer"] = answer
+		response["zipped"] = zip(questions,answer)
 	return render(request, "quiz/exam.html", response)

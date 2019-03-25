@@ -18,3 +18,9 @@ class Question(models.Model):
 
 	def __str__(self):
 		return self.question
+
+class ExamTime(models.Model):
+	time = models.DateTimeField()
+
+	def __str__(self):
+		return str(self.time)
