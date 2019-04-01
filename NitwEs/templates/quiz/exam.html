@@ -123,29 +123,29 @@ input[type=radio]:checked ~ label{
 		<div class="options" style="color: white">
 			<ul>
 				<li>
-			      <input type="radio" name="{{question.pk}}" id="op1">
-			      <label for="op1">
+			      <input type="radio" name="{{question.pk}}" id="op1{{ forloop.counter}}">
+			      <label for="op1{{ forloop.counter}}">
 				     {{question.op1}}<br> 
 			      </label>
 			      <div class="check"><div class="inside"></div></div>
 		        </li>
 		        <li>
-			      <input type="radio" name="{{question.pk}}" id="op2">
-			      <label for="op2">
+			      <input type="radio" name="{{question.pk}}" id="op2{{ forloop.counter}}">
+			      <label for="op2{{ forloop.counter}}">
 			      	 {{question.op2}}<br> 
 			      </label>
 			      <div class="check"><div class="inside"></div></div>
 			    </li>
 			    <li>
-			      <input type="radio" name="{{question.pk}}" id="op3">
-                  <label for="op3">
+			      <input type="radio" name="{{question.pk}}" id="op3{{ forloop.counter}}">
+                  <label for="op3{{ forloop.counter}}">
 			         {{question.op3}}<br>
 			      </label>
 			      <div class="check"><div class="inside"></div></div>
 			    </li>
 			    <li>
-			      <input type="radio" name="{{question.pk}}" id="op4">
-			      <label for="op4">
+			      <input type="radio" name="{{question.pk}}" id="op4{{ forloop.counter}}">
+			      <label for="op4{{ forloop.counter}}">
 			      	{{question.op4}}<br>
 			      </label>
 			      <div class="check"><div class="inside"></div></div>
@@ -157,7 +157,7 @@ input[type=radio]:checked ~ label{
 		
 
 			{% if answer.correct %}
-				<h1>Good Job</h1>
+				<h1>=Good Job</h1>
 			{% else %}
 				<h1>{{question.answer}}</h1>
 				<h1>Wrong Attempt</h1>
@@ -173,29 +173,29 @@ input[type=radio]:checked ~ label{
 		<div class="options" style="color: white">
 				<ul>
 				<li>
-			      <input type="radio" name="{{question.pk}}" id="op1">
-			      <label for="op1">
+			      <input type="radio" name="{{question.pk}}" id="op1{{ forloop.counter}}">
+			      <label for="op1{{ forloop.counter}}">
 				     {{question.op1}}<br> 
 			      </label>
 			      <div class="check"><div class="inside"></div></div>
 		        </li>
 		        <li>
-			      <input type="radio" name="{{question.pk}}" id="op2">
-			      <label for="op2">
+			      <input type="radio" name="{{question.pk}}" id="op2{{ forloop.counter}}">
+			      <label for="op2{{ forloop.counter}}">
 			      	 {{question.op2}}<br> 
 			      </label>
 			      <div class="check"><div class="inside"></div></div>
 			    </li>
 			    <li>
-			      <input type="radio" name="{{question.pk}}" id="op3">
-                  <label for="op3">
+			      <input type="radio" name="{{question.pk}}" id="op3{{ forloop.counter}}">
+                  <label for="op3{{ forloop.counter}}">
 			         {{question.op3}}<br>
 			      </label>
 			      <div class="check"><div class="inside"></div></div>
 			    </li>
 			    <li>
-			      <input type="radio" name="{{question.pk}}" id="op4">
-			      <label for="op4">
+			      <input type="radio" name="{{question.pk}}" id="op4{{ forloop.counter}}">
+			      <label for="op4{{ forloop.counter}}">
 			      	{{question.op4}}<br>
 			      </label>
 			      <div class="check"><div class="inside"></div></div>
