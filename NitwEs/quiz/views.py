@@ -16,6 +16,7 @@ def exam(request):
 			r = {}
 			r['correct'] = False
 			r['ans'] = request.POST[str(qes.pk)]
+			print(request.POST[str(qes.pk)])
 			if qes.answer == request.POST[str(qes.pk)]:
 				r['correct'] = True
 				score+=1
