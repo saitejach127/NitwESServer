@@ -9,7 +9,7 @@ from .models import *
 
 def signup(request):
 	response = {}
-	if request.user.is_authenticated() and request.user.is_active :
+	if request.user.is_authenticated and request.user.is_active :
 		return redirect("/")
 
 	if request.method == "POST":
@@ -36,7 +36,7 @@ def signup(request):
 		login(request, user)
 
 		return redirect("/")
-	return render(request, "authentication/signup .html", response)
+	return render(request, "authentication/signup.html", response)
 
 def signout(request):
 	logout(request)

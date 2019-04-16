@@ -24,3 +24,27 @@ def exam(request):
 		response["answer"] = answer
 		response["zipped"] = zip(questions,answer)
 	return render(request, "quiz/exam.html", response)
+
+def home(request):
+	response = {}
+	if request.user.is_authenticated and request.user.is_active :
+		response["auth"] = True
+	else :
+		response["auth"] = False
+	return render(request, "home.html", response)
+
+def sponsor(request):
+	response = {}
+	if request.user.is_authenticated and request.user.is_active :
+		response["auth"] = True
+	else :
+		response["auth"] = False
+	return render(request, "sponsors.html", response)
+
+def team(request):
+	response = {}
+	if request.user.is_authenticated and request.user.is_active :
+		response["auth"] = True
+	else :
+		response["auth"] = False
+	return render(request, "team.html", response)
